@@ -124,7 +124,7 @@ vector<vector<string>> CSVOperator::GetResult(std::string buffer)
 		}
 
 	}
-	//��ֹû�н�����
+	//防止没有换行符
 	if (current_buf != "")
 	{
 		line.push_back(current_buf);
