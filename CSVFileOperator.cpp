@@ -228,18 +228,18 @@ string CSVOperator::GetString(std::map<int, LanguageOutput> _LanguageOutput, CLa
 	map<int, LanguageOutput>::iterator itor;
 	switch (LanguageType)
 	{
-	case ISDKSettings::LNG_ENGLISH:
+	case CLanguageType::LNG_ENGLISH:
 		itor = _LanguageOutput.find(LanguageIndex);
 		if (itor == _LanguageOutput.end()) return "";
 		return itor->second.English;
 		break;
-	case ISDKSettings::LNG_CHINESE:
+	case CLanguageType::LNG_CHINESE:
 		itor = _LanguageOutput.find(LanguageIndex);
 		if (itor == _LanguageOutput.end()) return "";
 		if (itor->second.Chinese != "") return itor->second.Chinese;
 		return itor->second.English;
 		break;
-	case ISDKSettings::LNG_JAPANESE:
+	case CLanguageType::LNG_JAPANESE:
 		itor = _LanguageOutput.find(LanguageIndex);
 		if (itor == _LanguageOutput.end()) return "";
 		if (itor->second.Janpanese != "") return itor->second.Janpanese;
