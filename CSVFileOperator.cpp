@@ -1,32 +1,14 @@
 #include "CSVFileOperator.h"
+#include <map>
+#include <sstream>
+#include <fstream>
 
-int CSVOperator::Error_line = 0;
-
-CSVOperator::CSVOperator(std::string buffer)
-{
-	m_content = buffer;
-	Error_line = 0;
-}
-
-CSVOperator::~CSVOperator() 
-{
-	clearresult();
-}
-
-void CSVOperator::clearresult()
-{
-	for (vector<vector<string>>::iterator it = m_result.begin(); it != m_result.end(); it++)
-	{
-		it->clear();
-	}
-}
+using namespace std;
 
 vector<vector<string>> CSVOperator::GetResult(std::string buffer)
 {
-	if (!strcmp(m_content.c_str(), buffer.c_str())) return m_result;
-
-	m_content = buffer;
-	clearresult();
+	vector<vector<string>> m_result;
+	auto& m_content = buffer;
 
 	vector<string> line;
 	string current_buf;
