@@ -6,22 +6,7 @@
 #include <map>
 #include <sstream>
 
-
 using namespace std;
-
-enum CLanguageType
-{
-	Chinese,
-	English,
-	Janpanese
-}
-
-typedef struct LanguageOutputstruct
-{
-	string Chinese;
-	string English;
-	string Janpanese;
-}LanguageOutput;
 
 class CSVOperator
 {
@@ -51,8 +36,4 @@ public:
 	
 	//self tool
 	static std::string to_string_nozero(float input);
-
-	//specially used as multi-language interface
-	static bool ChangeStrResultToOutput(std::map<int, LanguageOutput> &_LanguageOutput, vector<vector<string>> _result);
-	static string GetString(std::map<int, LanguageOutput> _LanguageOutput, CLanguageType LanguageType, int LanguageIndex);
 };
